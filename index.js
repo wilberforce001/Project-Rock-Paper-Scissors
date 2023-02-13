@@ -1,6 +1,7 @@
-function getComputerChoice(game) {
-    console.log(game);
+const getComputerChoice = () => {
+    const arrOfChoices = ['Rock', 'Paper', 'Scissors']
+    const randomNum = Math.floor(Math.random()*3)
+    console.log(arrOfChoices[randomNum])
+
 }
-getComputerChoice('Rock')
-getComputerChoice('Paper')
-getComputerChoice('Scissors')
+getComputerChoice()
