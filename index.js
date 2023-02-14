@@ -20,15 +20,22 @@ const playRound = (playerSelection, computerSelection) => {
         return 'You tied! You both picked scissors'
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         return 'You lost! Rock crushes scissors'
+        //compScore = compScore + 1, compScore--, compScore = CompScore -1 
+        compScore++
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        playerScore++
         return "You won! Scissors cuts paper"
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        compScore++
         return 'You lost! Paper covers rock'
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        playerScore++
         return 'You won! Rock crushes scissors'
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        compScore++
         return 'You lost! Scissors cuts paper'
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        playerScore++
         return 'You won! Paper covers rock'
     }
 }
@@ -39,11 +46,19 @@ const computerSelection = getComputerChoice();
 const game = () => {
     for (let i = 0; i < 5; i++) {
         const computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
+        playRound(playerSelection, computerSelection)
 
+    }
+
+    if (playerSelection > compScore) {
+        return'You beat the computer! You are a genius!'
+    } else if (playerScore < compScore) {
+        return 'You got beat by the computer! Practice your throws!'
+    } else {
+        return 'You tied with the computer! Not too shabby'
     }
 }
 
-game()
+console.log(game())
 
 
