@@ -1,5 +1,9 @@
+let playerScore = 0
+let compScore = 0
+
+
 const getComputerChoice = () => {
-    const arrOfChoices = ['Rock', 'Paper', 'Scissors']
+    const arrOfChoices = ['rock', 'paper', 'scissors']
     const randomNum = Math.floor(Math.random()*3)
     const compChoice = arrOfChoices[randomNum]
     return compChoice
@@ -7,6 +11,7 @@ const getComputerChoice = () => {
 }
 
 const playRound = (playerSelection, computerSelection) => {
+    console.log('1 ', playerSelection, '2 ', computerSelection)
     if (playerSelection === 'rock' && computerSelection === 'rock') {
         return 'You tied! You both picked rock'
     } else if (playerSelection === 'paper' && computerSelection === 'paper') {
@@ -27,3 +32,18 @@ const playRound = (playerSelection, computerSelection) => {
         return 'You won! Paper covers rock'
     }
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+
+const game = () => {
+    for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection))
+
+    }
+}
+
+game()
+
+
