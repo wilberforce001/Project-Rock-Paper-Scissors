@@ -41,7 +41,7 @@ const playRound = (playerSelection, computerSelection) => {
 }
 
 
-const game = () => {
+function game() {
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt('Choose what to throw', 'Rock, Paper, Scissors').toLowerCase()
         const computerSelection = getComputerChoice()
@@ -50,7 +50,7 @@ const game = () => {
     }
 
     if (playerSelection > compScore) {
-        return'You beat the computer! You are a genius!'
+        return 'You beat the computer! You are a genius!'
     } else if (playerScore < compScore) {
         return 'You got beat by the computer! Practice your throws!'
     } else {
