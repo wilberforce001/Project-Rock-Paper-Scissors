@@ -1,5 +1,5 @@
-let playerScore = 0
-let compScore = 0
+let playerScore = 0;
+let compScore = 0;
 
 
 const getComputerChoice = () => {
@@ -58,6 +58,6 @@ const game = () => {
     }
 }
 
-console.log(game())
+console.log(game());
 
 
